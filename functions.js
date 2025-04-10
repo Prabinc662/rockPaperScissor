@@ -12,7 +12,7 @@ function getComputerChoice() {
 console.log(getComputerChoice());
 
 function getHumanChoice() {
-    choice = prompt("Select your option.");
+    choice = prompt("Rock, Paper or Scissor", "Rock");
     return choice;
 }
 
@@ -20,6 +20,7 @@ console.log(getHumanChoice());
 
 let humanScore = 0;
 let computerScore = 0;
+
 
 // function playRound(humanChoice, computerChoice) {
 //     if (humanChoice == 0 & computerChoice == 0) {
