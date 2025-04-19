@@ -14,8 +14,8 @@ function getHumanChoice() {
     return choice.toLowerCase();
 }
 
-let humanScore = 0;
-let computerScore = 0;
+var humanScore = 0;
+var computerScore = 0;
 
 
 function playRound(humanChoice, computerChoice) {
@@ -61,21 +61,32 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGame() {
+    var computerPoint = 0;
+    var humanPoint = 0;
     i = 0
     while (i < 5) {
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
 
         playRound(humanSelection, computerSelection);
-        
+
         if (winner == "Computer") {
-            computerScore =+ 1;
+            computerPoint = computerPoint + 1;
         } else if (winner == "Human") {
-            humanScore =+ 1;
+            humanPoint = humanPoint + 1;
         }
-        console.log("Human Score = " + humanScore);
-        console.log("Computer Score = " + computerScore);
+        console.log("Human Score = " + humanPoint);
+        console.log("Computer Score = " + computerPoint);
+
         i++;
+    }
+
+    if (computerPoint > humanPoint) {
+        console.log("Computer wins!")
+    } else if (humanPoint > computerPoint) {
+        console.log("You win!")
+    } else {
+        console.log("The Game has ended in Draw!")
     }
 }
 
